@@ -1,0 +1,11 @@
+name: "Build"
+description: "Check if canisters can be build without ic-cdk-optimizer"
+author: "rem.codes"
+inputs:
+  network:
+    description: "The network that the canister will be build for."
+    required: true
+    default: "development"
+runs:
+  using: "docker"
+  image: "Dockerfile"

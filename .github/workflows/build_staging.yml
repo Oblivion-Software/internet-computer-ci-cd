@@ -1,0 +1,19 @@
+name: Build for staging
+
+on:
+  pull_request:
+    branches: [staging]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy canisters
+        id: deploy
+        uses: ./.github/actions/build/
+        with:
+          identity: ${{ secrets.STAGING_IDENTITY }}
+          network: staging
+      - name: Show success message
+        run: echo success!

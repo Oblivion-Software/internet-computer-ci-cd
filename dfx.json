@@ -1,21 +1,12 @@
 {
   "canisters": {
-    "ci_cd": {
-      "main": "src/ci_cd/main.mo",
+    "foo_canister": {
+      "main": "src/ci-cd/foo_main.mo",
       "type": "motoko"
     },
-    "ci_cd_assets": {
-      "dependencies": [
-        "ci_cd"
-      ],
-      "frontend": {
-        "entrypoint": "src/ci_cd_assets/src/index.html"
-      },
-      "source": [
-        "src/ci_cd_assets/assets",
-        "dist/ci_cd_assets/"
-      ],
-      "type": "assets"
+    "bar_canister": {
+      "main": "src/ci-cd/bar_main.mo",
+      "type": "motoko"
     }
   },
   "defaults": {

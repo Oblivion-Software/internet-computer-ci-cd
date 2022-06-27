@@ -1,0 +1,12 @@
+{
+    "foo_canister": {
+        "development": "foo_development_canister_id",
+        "staging": "foo_staging_canister_id",
+        "production": "foo_production_canister_id"
+    },
+    "bar_canister": {
+        "development": "bar_development_canister_id",
+        "staging": "bar_staging_canister_id",
+        "production": "bar_production_canister_id"
+    }
+}

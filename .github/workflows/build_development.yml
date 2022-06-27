@@ -1,0 +1,19 @@
+name: Build for development
+
+on:
+  pull_request:
+    branches: [development]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy canisters
+        id: deploy
+        uses: ./.github/actions/build/
+        with:
+          identity: ${{ secrets.DEVELOPMENT_IDENTITY }}
+          network: development
+      - name: Show success message
+        run: echo success!

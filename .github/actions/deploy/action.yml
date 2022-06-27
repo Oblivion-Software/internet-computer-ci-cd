@@ -1,0 +1,14 @@
+name: "Deploy"
+description: "Deploy canisters to the IC"
+author: "rem.codes"
+inputs:
+  identity:
+    description: "IC identity for deploying the canisters"
+    required: true
+  network:
+    description: "The network that the canister will be deployed to"
+    required: true
+    default: "development"
+runs:
+  using: "docker"
+  image: "Dockerfile"

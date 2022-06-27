@@ -1,0 +1,22 @@
+name: Deploy to development
+
+on:
+  pull_request:
+    branches: [development]
+    types:
+      - closed
+
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy canisters
+        id: deploy
+        uses: ./.github/actions/deploy/
+        with:
+          identity: ${{ secrets.DEVELOPMENT_IDENTITY }}
+          network: development
+      - name: Show success message
+        run: echo success!
